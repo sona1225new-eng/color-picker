@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-primary": "#8083ff",
+            "on-tertiary-container": "#4a002f",
+            "on-secondary-fixed-variant": "#485798",
+            "surface-dim": "#d4dbdf",
+            "on-error-container": "#6e0523",
+            "on-secondary": "#faf8ff",
+            "secondary-fixed": "#dde1ff",
+            "on-secondary-fixed": "#2b3b7a",
+            "error-dim": "#6b0221",
+            "tertiary-container": "#f673b7",
+            "tertiary-dim": "#952467",
+            "secondary-fixed-dim": "#cad2ff",
+            "secondary-dim": "#404f8f",
+            "on-primary-fixed-variant": "#010028",
+            "secondary-container": "#dde1ff",
+            "surface-variant": "#dce4e8",
+            "outline": "#747c80",
+            "tertiary-fixed": "#f673b7",
+            "surface-container-lowest": "#ffffff",
+            "on-primary-container": "#000000",
+            "on-tertiary-fixed": "#000000",
+            "inverse-surface": "#0b0f10",
+            "primary-fixed-dim": "#6366f1",
+            "on-background": "#2c3437",
+            "surface-tint": "#4a4bd7",
+            "surface-container": "#eaeff2",
+            "on-error": "#fff7f7",
+            "primary-fixed": "#7073ff",
+            "surface-container-highest": "#dce4e8",
+            "primary-dim": "#3d3dcb",
+            "surface-bright": "#f7f9fb",
+            "on-surface-variant": "#596064",
+            "primary-container": "#7073ff",
+            "surface": "#f7f9fb",
+            "on-primary-fixed": "#000000",
+            "background": "#f7f9fb",
+            "on-primary": "#fbf7ff",
+            "tertiary-fixed-dim": "#e666aa",
+            "secondary": "#4c5b9c",
+            "on-tertiary-fixed-variant": "#5b003b",
+            "outline-variant": "#acb3b7",
+            "on-surface": "#2c3437",
+            "error": "#a8364b",
+            "primary": "#4a4bd7",
+            "surface-container-high": "#e3e9ed",
+            "inverse-on-surface": "#9a9d9f",
+            "error-container": "#f97386",
+            "on-tertiary": "#fff7f8",
+            "surface-container-low": "#f0f4f7",
+            "on-secondary-container": "#3e4d8e",
+            "tertiary": "#a53173"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "fontFamily": {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Manrope"],
+            "label": ["Manrope"]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-body bg-background text-on-background min-h-screen selection:bg-primary-container selection:text-on-primary-container">
+<!-- Background Decorative Orbs -->
+<div class="fixed inset-0 overflow-hidden -z-10 pointer-events-none">
+<div class="absolute -top-[10%] -left-[5%] w-[400px] h-[400px] rounded-full bg-primary/10 blur-[100px]"></div>
+<div class="absolute top-[40%] -right-[10%] w-[500px] h-[500px] rounded-full bg-tertiary-container/10 blur-[120px]"></div>
+<div class="absolute -bottom-[10%] left-[20%] w-[450px] h-[450px] rounded-full bg-secondary-container/20 blur-[100px]"></div>
+</div>
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-white/70 dark:bg-slate-900/70 backdrop-blur-xl shadow-sm flex items-center justify-between px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-indigo-600 dark:text-indigo-400" data-icon="palette">palette</span>
+<span class="text-xl font-bold text-slate-900 dark:text-slate-50 font-headline tracking-tight">Color Palette</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-indigo-600 dark:text-indigo-400 font-bold font-plus-jakarta tracking-tight" href="#">Explorer</a>
+<a class="text-slate-500 dark:text-slate-400 font-plus-jakarta tracking-tight hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors px-3 py-1 rounded-lg" href="#">Saved</a>
+<a class="text-slate-500 dark:text-slate-400 font-plus-jakarta tracking-tight hover:bg-slate-100/50 dark:hover:bg-slate-800/50 transition-colors px-3 py-1 rounded-lg" href="#">Settings</a>
+</div>
+<button class="material-symbols-outlined p-2 rounded-full active:scale-95 transition-transform text-slate-500" data-icon="search">search</button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="min-h-screen pt-32 pb-40 px-6 flex items-center justify-center">
+<section class="max-w-xl w-full">
+<!-- Color Picker Card -->
+<div class="bg-surface-container-lowest/70 backdrop-blur-3xl p-8 md:p-12 rounded-xl shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)] relative overflow-hidden group">
+<!-- Subtle Branding Element -->
+<div class="flex flex-col gap-1 mb-8">
+<h1 class="text-3xl md:text-4xl font-headline font-extrabold tracking-tight text-on-background">Color Picker</h1>
+<p class="text-on-surface-variant font-medium opacity-70">Curate your digital canvas</p>
+</div>
+<!-- Hidden Radio Inputs for Logic (No JS) -->
+<!-- We use a wrapper that changes background based on child radio being checked -->
+<form class="space-y-10 relative">
+<!-- Color Preview & Hex Display Box -->
+<div class="relative w-full aspect-video rounded-lg overflow-hidden shadow-inner flex items-end justify-between p-6 transition-all duration-700 bg-primary-container" id="preview-box">
+<!-- Background overlays for colors -->
+
+<div id="preview-box"
+     class="relative w-full aspect-video rounded-lg overflow-hidden shadow-inner flex items-end justify-between p-6 transition-all duration-700"
+     style="background-color:#4a4bd7">
+
+  <div class="z-10 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full border border-white/30">
+    <p id="hex-label"
+       class="text-white font-bold tracking-widest font-headline uppercase">
+       #4A4BD7
+    </p>
+  </div>
+
+  <button id="copy-btn"
+          class="z-10 bg-white/20 backdrop-blur-md p-2 rounded-full border border-white/30 text-white">
+    <span class="material-symbols-outlined">content_copy</span>
+  </button>
+</div>
+</div>
+<!-- Swatch Grid -->
+<div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-6 justify-items-center">
+<!-- Swatch 1: Indigo -->
+<label class="relative cursor-pointer group/swatch">
+<input checked="" class="peer hidden" name="color-select" type="radio"/>
+<div data-color="#4a4bd7" class="w-12 h-12 rounded-full bg-[#4a4bd7] ring-offset-4 ring-2 ring-transparent peer-checked:ring-primary shadow-lg transition-all duration-300 active:scale-90 hover:scale-110"></div>
+</label>
+<!-- Swatch 2: Sunset -->
+<label class="relative cursor-pointer group/swatch">
+<input class="peer hidden" name="color-select" type="radio"/>
+<div data-color="#f97386" class="w-12 h-12 rounded-full bg-[#f97386] ring-offset-4 ring-2 ring-transparent peer-checked:ring-error-container shadow-lg transition-all duration-300 active:scale-90 hover:scale-110"></div>
+</label>
+<!-- Swatch 3: Emerald -->
+<label class="relative cursor-pointer group/swatch">
+<input class="peer hidden" name="color-select" type="radio"/>
+<div data-color="#10b981" class="w-12 h-12 rounded-full bg-[#10b981] ring-offset-4 ring-2 ring-transparent peer-checked:ring-[#10b981] shadow-lg transition-all duration-300 active:scale-90 hover:scale-110"></div>
+</label>
+<!-- Swatch 4: Violet -->
+<label class="relative cursor-pointer group/swatch">
+<input class="peer hidden" name="color-select" type="radio"/>
+<div data-color="#a855f7" class="w-12 h-12 rounded-full bg-[#a855f7] ring-offset-4 ring-2 ring-transparent peer-checked:ring-[#a855f7] shadow-lg transition-all duration-300 active:scale-90 hover:scale-110"></div>
+</label>
+<!-- Swatch 5: Amber -->
+<label class="relative cursor-pointer group/swatch">
+<input class="peer hidden" name="color-select" type="radio"/>
+<div data-color="#f59e0b" class="w-12 h-12 rounded-full bg-[#f59e0b] ring-offset-4 ring-2 ring-transparent peer-checked:ring-[#f59e0b] shadow-lg transition-all duration-300 active:scale-90 hover:scale-110"></div>
+</label>
+<!-- Swatch 6: Sky -->
+<label class="relative cursor-pointer group/swatch">
+<input class="peer hidden" name="color-select" type="radio"/>
+<div data-color="#0ea5e9" class="w-12 h-12 rounded-full bg-[#0ea5e9] ring-offset-4 ring-2 ring-transparent peer-checked:ring-[#0ea5e9] shadow-lg transition-all duration-300 active:scale-90 hover:scale-110"></div>
+</label>
+<!-- Swatch 7: Rose -->
+<label class="relative cursor-pointer group/swatch">
+<input class="peer hidden" name="color-select" type="radio"/>
+<div data-color="#e11d48" class="w-12 h-12 rounded-full bg-[#e11d48] ring-offset-4 ring-2 ring-transparent peer-checked:ring-[#e11d48] shadow-lg transition-all duration-300 active:scale-90 hover:scale-110"></div>
+</label>
+<!-- Swatch 8: Slate -->
+<label class="relative cursor-pointer group/swatch">
+<input class="peer hidden" name="color-select" type="radio"/>
+<div data-color="#475569" class="w-12 h-12 rounded-full bg-[#475569] ring-offset-4 ring-2 ring-transparent peer-checked:ring-[#475569] shadow-lg transition-all duration-300 active:scale-90 hover:scale-110"></div>
+</label>
+<!-- Swatch 9: Lime -->
+<label class="relative cursor-pointer group/swatch">
+<input class="peer hidden" name="color-select" type="radio"/>
+<div data-color="#84cc16" class="w-12 h-12 rounded-full bg-[#84cc16] ring-offset-4 ring-2 ring-transparent peer-checked:ring-[#84cc16] shadow-lg transition-all duration-300 active:scale-90 hover:scale-110"></div>
+</label>
+<!-- Swatch 10: Fuchsia -->
+<label class="relative cursor-pointer group/swatch">
+<input class="peer hidden" name="color-select" type="radio"/>
+<div data-color="#d946ef" class="w-12 h-12 rounded-full bg-[#d946ef] ring-offset-4 ring-2 ring-transparent peer-checked:ring-[#d946ef] shadow-lg transition-all duration-300 active:scale-90 hover:scale-110"></div>
+</label>
+<!-- Swatch 11: Orange -->
+<label class="relative cursor-pointer group/swatch">
+<input class="peer hidden" name="color-select" type="radio"/>
+<div data-color="#f97316" class="w-12 h-12 rounded-full bg-[#f97316] ring-offset-4 ring-2 ring-transparent peer-checked:ring-[#f97316] shadow-lg transition-all duration-300 active:scale-90 hover:scale-110"></div>
+</label>
+<!-- Swatch 12: Teal -->
+<label class="relative cursor-pointer group/swatch">
+<input class="peer hidden" name="color-select" type="radio"/>
+<div data-color="#14b8a6" class="w-12 h-12 rounded-full bg-[#14b8a6] ring-offset-4 ring-2 ring-transparent peer-checked:ring-[#14b8a6] shadow-lg transition-all duration-300 active:scale-90 hover:scale-110"></div>
+</label>
+</div>
+<div class="pt-6 border-t border-outline-variant/10">
+<button class="w-full bg-primary text-on-primary h-14 rounded-xl font-bold tracking-tight shadow-xl hover:shadow-primary/20 hover:scale-[1.01] transition-all duration-300 active:scale-[0.98] flex items-center justify-center gap-2" type="button">
+              Save to Library
+              <span class="material-symbols-outlined" data-icon="bookmark_add">bookmark_add</span>
+</button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation Shell (Mobile Only) -->
+<footer class="md:hidden fixed bottom-0 left-0 w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-2xl shadow-[0_-10px_40px_rgba(0,0,0,0.05)] rounded-t-[3rem] z-50 flex justify-around items-center px-4 pb-6 pt-3">
+<a class="flex flex-col items-center justify-center bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-300 rounded-full px-6 py-2 transition-all duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+<span class="text-xs font-semibold font-plus-jakarta mt-1">Explorer</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-all duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="bookmark">bookmark</span>
+<span class="text-xs font-semibold font-plus-jakarta mt-1">Saved</span>
+</a>
+<div class="flex flex-col items-center justify-center">
+<button class="bg-primary text-on-primary w-14 h-14 rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform -translate-y-6">
+<span class="material-symbols-outlined text-2xl" data-icon="add_circle">add_circle</span>
+</button>
+</div>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-indigo-500 transition-all duration-300 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-xs font-semibold font-plus-jakarta mt-1">Settings</span>
+</a>
+</footer>
+<!-- Asymmetric Gallery Detail Element -->
+<div class="fixed right-12 bottom-24 hidden lg:block opacity-40">
+<div class="relative w-48 h-64 rounded-lg overflow-hidden border-2 border-white/50 rotate-3 group-hover:rotate-0 transition-transform duration-700">
+<img alt="abstract gradient" class="w-full h-full object-cover" data-alt="smooth gradient flowing from deep navy to soft lavender with subtle grain texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhDLPBE3-toUm_8SWaxln--_3A0j5l8WpHHHhf5z41k2cL9xnsFdYKpD2lVZCzlilq-Ub1FziDrtw561BbbdXl6H0W7bLDyMlButukh6RFRSr4kznPgREULDX-AQLISHcs4iOnI6zHWNIX7sDKQ4_xAjOXCUcVZCXqHbmHgpuWYbb-CNZ8a0x6wktiCS62TA_xIAOCRYJMYAnnhaVGmLAE-6N6mxWk7pnb8Gn2nLTF6dUNNRLw3OaNRUF89N2RIBCNXq2u-90nsta1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+</div>
+</div>
+<script>
+  const swatches = document.querySelectorAll('[data-color]');
+  const previewBox = document.getElementById('preview-box');
+  const hexLabel = document.getElementById('hex-label');
+  const copyBtn = document.getElementById('copy-btn');
+
+  swatches.forEach(swatch => {
+    swatch.addEventListener('click', () => {
+      const color = swatch.dataset.color;
+      previewBox.style.backgroundColor = color;
+      hexLabel.textContent = color.toUpperCase();
+    });
+  });
+
+  copyBtn.addEventListener('click', () => {
+    const hex = hexLabel.textContent;
+    navigator.clipboard.writeText(hex);
+
+    copyBtn.innerText = "Copied!";
+    setTimeout(() => {
+      copyBtn.innerHTML =
+        '<span class="material-symbols-outlined">content_copy</span>';
+    }, 1200);
+  });
+</script>
+</body></html>
